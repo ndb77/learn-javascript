@@ -1,17 +1,21 @@
-let count = 0
-let saveEl = document.getElementById("save-el")
-let countEl = document.getElementById("count-el")
+let countElement =  document.getElementById("count-el")
+let saveElement = document.getElementById("save-el")
 
-function increment() {
-    count += 1
-    countEl.textContent = count
+var counter = 0
+var previous_entries = []
+
+console.log(previous_entries.length)
+
+function increment(){
+    counter+=1
+    countElement.innerText = counter
 }
 
-function save() {
-    let countStr = count + " - "
-    saveEl.textContenttStr
-    countEl.textContent = 0
-    count = 0
+function save(){
+    previous_entries.push(counter)
+    saveElement.innerText = "Previous Entries: " + previous_entries.slice(-3).reverse()
+    countElement.textContent = 0
+    counter = 0
+    console.log("Saved")
 }
 
-console.log("Let's count people on the subway!")
